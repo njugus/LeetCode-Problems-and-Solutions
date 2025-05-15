@@ -35,6 +35,7 @@ character_frequency = Counter(my_name)
 print(character_frequency)
 print(character_frequency.get('n'))
 
+
 # example 5
 # check whether two words are anagrams or not
 
@@ -71,7 +72,6 @@ def no_repeating_char():
 
 
 print(no_repeating_char())
-
 
 
 # example using ordered dict
