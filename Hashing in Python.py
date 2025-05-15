@@ -4,6 +4,9 @@
 # Python’s set is just a hash table that stores only keys,
 # and it uses hashing behind the scenes to do everything fast.
 
+from collections import OrderedDict
+from collections import Counter
+
 # example 1
 grades = {"Kelvin": 97, "Lucy": 100, "Maryann": 99}
 del grades["Lucy"]
@@ -34,7 +37,6 @@ print(character_frequency.get('n'))
 
 # example 5
 # check whether two words are anagrams or not
-from collections import Counter
 
 
 def anagram_checker(x, y):
@@ -69,3 +71,22 @@ def no_repeating_char():
 
 
 print(no_repeating_char())
+
+
+
+# example using ordered dict
+# anytime you want to preserve the order of items in a dict and perform an operations
+# e.g find their frequencies then use ordered dict
+
+def find_non_repeating_char():
+    char_count = OrderedDict()
+    for char in word:
+        char_count[char] = char_count.get(char, 0) + 1
+    for char, count in char_count.items():
+        if count == 1:
+            return char
+    return "all characters have been repeated"
+
+
+word = str(input("Enter a word: "))
+print(find_non_repeating_char())
