@@ -19,11 +19,11 @@ print(unique_emails)
 # example 3
 # count the number of occurrences of a value in an list
 from collections import Counter
+
 my_array = [1, 2, 3, 1, 2, 4, 5, 4]
 num_frequency = Counter(my_array)
 print(num_frequency)
 print(type(num_frequency))
-
 
 # example 4
 # count the number of occurrences of a character in a string
@@ -36,9 +36,36 @@ print(character_frequency.get('n'))
 # check whether two words are anagrams or not
 from collections import Counter
 
+
 def anagram_checker(x, y):
     return Counter(x) == Counter(y)
 
 
 print(anagram_checker("post", "stop"))
 
+#  find the first non-repeating character in a string
+#  a character thats not been repeated in a word
+
+input_word = str(input("Enter a word: "))
+
+
+# input string validator
+def string_validator():
+    new_string = " ".join(char.lower() for char in input_word if char.isalnum())
+    if not new_string:
+        return "Invalid characters in the string"
+    return new_string
+
+
+# processing
+def no_repeating_char():
+    cleaned_string = string_validator()
+    char_freq = Counter(cleaned_string)
+    for key in char_freq:
+        if char_freq[key] == 1:
+            return key
+
+    return "all characters are repeated"
+
+
+print(no_repeating_char())
