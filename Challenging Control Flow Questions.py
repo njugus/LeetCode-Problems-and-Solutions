@@ -50,3 +50,38 @@ def get_sum_of_two_lists(list_1, list_2):
 list_3 = []
 list_4 = []
 print(get_sum_of_two_lists(list_3, list_4))
+
+# a function to find frequently repeated numbers in a list and return their frequency in a dictionary
+
+my_array = [1, 2, 3, 2, 2, 4]
+
+
+def count_repetitive_numbers(y):
+    my_dict = {}
+    for num in y:
+        freq = my_array.count(num)
+        my_dict[num] = freq
+
+    return my_dict
+
+
+print(count_repetitive_numbers(my_array))
+
+
+# solve the 2 sum problem
+def two_sum(nums, target):
+    seen = {}
+    for num in nums:
+        complement = target - num
+        if complement in seen:
+            return [complement, num]
+        seen[num] = True
+    return []
+
+
+result = two_sum([1, 2, 3, 4, 5, 8], 9)
+
+if result:
+    print(f"Pair found: {result}")
+else:
+    print("No pair found.")
