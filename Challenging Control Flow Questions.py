@@ -55,7 +55,6 @@ print(get_sum_of_two_lists(list_3, list_4))
 
 my_array = [1, 2, 3, 2, 2, 4]
 
-
 def count_repetitive_numbers(y):
     my_dict = {}
     for num in y:
@@ -106,3 +105,24 @@ for element in character_freq:
 
 else:
     print("No unique character found")
+
+# return the number of  duplicate items in a list
+num_list = [1, 2, 3, 5, 3]
+
+
+def check_for_duplicates(my_array):
+    num_dict = {}
+    duplicates = []
+    for num in my_array:  # 0(n)
+        if num in num_dict:
+            num_dict[num] += 1
+        else:
+            num_dict[num] = 1
+
+    for item in num_dict:  # 0(n)
+        if num_dict[item] > 1:
+            duplicates.append(item)
+    return len(duplicates)
+
+
+print(check_for_duplicates(num_list))
