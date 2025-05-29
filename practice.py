@@ -1,16 +1,17 @@
-# optimal one
-# use sets for first lookup
-# check whether a list contains duplicates or not
-def check_for_duplicates(my_array):
-    seen_items = set()
-    for num in my_array:
-        if num in seen_items:
-            return "The array has no duplicates"
-        else:
-            seen_items.add(num)
+# reverse the entire string + reverse the words in the string
 
-    return seen_items
+def reverse_words(s):
+    words = s.strip().split()
+
+    left = 0
+    right = len(words) - 1
+
+    while left < right:
+        words[left], words[right] = words[right], words[left]
+        left += 1
+        right -= 1
+
+    return " ".join(words)
 
 
-num_list = [1, 2, 3, 4, 5]
-print(check_for_duplicates(num_list))
+print(reverse_words("kelvin njuguna kagwima"))
