@@ -126,3 +126,5 @@ def check_for_duplicates(my_array):
 
 
 print(check_for_duplicates(num_list))
+
+
